@@ -51,27 +51,7 @@
                     <% } %>
                     --%>
 
-                    <dt>Двухфакторная проверка подлинности:</dt>
-                    <dd>
-                        <p>
-                            Поставщики двухфакторной аутентификации не настроены. В <a href="https://go.microsoft.com/fwlink/?LinkId=403804">этой статье</a>
-                можно узнать, как настроить двухфакторную аутентификацию для этого приложения ASP.NET.
-                        </p>
-                        <% if (TwoFactorEnabled)
-                          { %> 
-                        <%--
-                        Enabled
-                        <asp:LinkButton Text="[Disable]" runat="server" CommandArgument="false" OnClick="TwoFactorDisable_Click" />
-                        --%>
-                        <% }
-                          else
-                          { %> 
-                        <%--
-                        Disabled
-                        <asp:LinkButton Text="[Enable]" CommandArgument="true" OnClick="TwoFactorEnable_Click" runat="server" />
-                        --%>
-                        <% } %>
-                    </dd>
+                    
                 </dl>
             </div>
         </div>

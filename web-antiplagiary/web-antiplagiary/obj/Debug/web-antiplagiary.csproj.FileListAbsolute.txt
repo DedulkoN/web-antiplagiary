@@ -115,3 +115,7 @@ D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web-antiplag
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web-antiplagiary.csproj.CopyComplete
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web-antiplagiary.dll
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web-antiplagiary.pdb
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\DocumentFormat.OpenXml.dll
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\System.IO.Packaging.dll
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\DocumentFormat.OpenXml.xml
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\System.IO.Packaging.xml

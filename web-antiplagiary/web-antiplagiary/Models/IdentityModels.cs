@@ -30,7 +30,7 @@ namespace web_antiplagiary.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("ModelAntiPLCOnnectedString", throwIfV1Schema: false)
         {
         }
 
