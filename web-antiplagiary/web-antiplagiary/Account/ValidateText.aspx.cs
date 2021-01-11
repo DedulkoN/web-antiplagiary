@@ -55,7 +55,7 @@ namespace web_antiplagiary.Account
                                 case "3":
                                     proc = ClassProcessing.ValidateWorks(words, ClassProcessing.TypeValidateWork.Научная);
                                 break;
-                        }
+                            }
                             
                       
 
