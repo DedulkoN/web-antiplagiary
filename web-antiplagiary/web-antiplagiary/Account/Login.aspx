@@ -45,21 +45,21 @@
                         </div>
                     </div>
                 </div>
-                <p>
+               <%--  <p>
                     <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Регистрация нового пользователя</asp:HyperLink>
                 </p>
                 <p>
-                    <%-- Enable this once you have account confirmation enabled for password reset functionality
+                    Enable this once you have account confirmation enabled for password reset functionality
                     <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Disabled">Forgot your password?</asp:HyperLink>
-                    --%>
-                </p>
+                    
+                </p>--%>
             </section>
         </div>
 
-        <div class="col-md-4">
+        <%-- <div class="col-md-4">
             <section id="socialLoginForm">
                 <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
             </section>
-        </div>
+        </div>--%>
     </div>
 </asp:Content>

@@ -4,13 +4,11 @@
 
     <div class="jumbotron">
         
-        <div class="col-md-4">
-         <asp:FileUpload ID="FileUpload1"  runat="server" AllowMultiple="True" />
-        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"/>
+        <div class="col-md-12">
+                   Автоматизированная система «Проверка работ студентов на заимствования» предназначена для организации в учебном заведении целостного процесса 
+            проверки студенческих работ на наличие заимствований.
             </div>
     </div>
-    <div class ="col-12">
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-    </div>
+  
 
 </asp:Content>

@@ -12,14 +12,14 @@ namespace web_antiplagiary.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            RegisterHyperLink.NavigateUrl = "Register";
+           // RegisterHyperLink.NavigateUrl = "Register";
             // Включите, когда будет включено подтверждение учетной записи для функции сброса пароля
             //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
-            OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
+           // OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
             if (!String.IsNullOrEmpty(returnUrl))
             {
-                RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
+            //    RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
         }
 

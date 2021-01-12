@@ -199,6 +199,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="image\gerb.png" />
+    <Content Include="image\v_11.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

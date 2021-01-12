@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Мое приложение ASP.NET</title>
+    <title><%: Page.Title %></title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -16,7 +16,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body>
+<body style="padding-top:0px;">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -37,27 +37,34 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+         
+         
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">   
             <div class="container">
+
+                <div class ="row" style="margin-top:3px;">
+                  <a runat="server" href="~/Default.aspx">  <img runat="server" src="~/image/v_11.png" /></a>
+                </div>
+
+
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Имя приложения</a>
+                    </button>                  
                 </div>
-                <div class="navbar-collapse collapse">
+
+                <div class="navbar-collapse collapse" >
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Домашняя</a></li>
-                        <li><a runat="server" href="~/About">Информация</a></li>
-                        <li><a runat="server" href="~/Contact">Связаться</a></li>
+                        <li><a runat="server" href="~/Account/ValidateText">Проверка текста</a></li>
+                        <li><a runat="server" href="~/Account/AddWorks">Добавить работы</a></li>                       
                     </ul>
+
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Регистрация</a></li>
+                            <ul class="nav navbar-nav navbar-right">                               
                                 <li><a runat="server" href="~/Account/Login">Вход</a></li>
                             </ul>
                         </AnonymousTemplate>
@@ -70,17 +77,33 @@
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
+
                 </div>
             </div>
         </div>
         <div class="container body-content">
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Антиплагиат БарГУ</p>
-            </footer>
+            
         </div>
+        <footer class="panel-footer" >
+            <div class="container">
+                <table ">
+	                <tr>
+	                <td><img src="~/image/gerb.png" width="120" runat="server"></td>
+	                <td style="color:#FFF"> <br><p >
+	                <strong>УЧРЕЖДЕНИЕ ОБРАЗОВАНИЯ "БАРАНОВИЧСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ"</strong></p>
+	                <p  >
+	                <strong>НАШ АДРЕС:</strong>
+	                <p >225404 Брестская область, <br>    г.Барановичи,     ул. Войкова 21</p>
+	                </td>
+	                </tr>
+	             </table>
+
+                <p style="color:#FFF">&copy; <%: DateTime.Now.Year %> - Антиплагиат БарГУ</p>
+                </div>
+            </footer>
     </form>
 </body>
 </html>

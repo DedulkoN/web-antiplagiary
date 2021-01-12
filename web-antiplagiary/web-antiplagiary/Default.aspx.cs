@@ -17,7 +17,7 @@ namespace web_antiplagiary
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+     /*   protected void Button1_Click(object sender, EventArgs e)
         {
 
             //чтение вордовсткого файла, без загрузки на сервер
@@ -71,6 +71,6 @@ namespace web_antiplagiary
                 }
                 else { }
             }
-        }
+        }*/
     }
 }
