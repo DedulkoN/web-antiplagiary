@@ -167,6 +167,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Account\AddWorks.aspx" />
+    <Content Include="Account\AdmPanel.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -229,6 +230,13 @@
     <Compile Include="Account\AddWorks.aspx.designer.cs">
       <DependentUpon>AddWorks.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\AdmPanel.aspx.cs">
+      <DependentUpon>AdmPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AdmPanel.aspx.designer.cs">
+      <DependentUpon>AdmPanel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\ClassProcessing.cs" />
     <Compile Include="Account\Confirm.aspx.cs">
       <DependentUpon>Confirm.aspx</DependentUpon>
@@ -286,6 +294,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012221143520_InitialCreate.cs" />
+    <Compile Include="Migrations\202012221143520_InitialCreate.Designer.cs">
+      <DependentUpon>202012221143520_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101140734241_1.cs" />
+    <Compile Include="Migrations\202101140734241_1.Designer.cs">
+      <DependentUpon>202101140734241_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ModelAntiPL.cs" />
     <Compile Include="Models\Specialty.cs" />
@@ -327,6 +344,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012221143520_InitialCreate.resx">
+      <DependentUpon>202012221143520_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101140734241_1.resx">
+      <DependentUpon>202101140734241_1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

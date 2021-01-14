@@ -119,3 +119,6 @@ D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\DocumentFormat.Ope
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\System.IO.Packaging.dll
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\DocumentFormat.OpenXml.xml
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\System.IO.Packaging.xml
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web_antiplagiary.Migrations.InitialCreate.resources
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web-antiplagiary.csproj.GenerateResource.cache
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web_antiplagiary.Migrations._1.resources

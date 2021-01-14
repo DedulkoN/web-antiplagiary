@@ -70,9 +70,9 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Здравствуйте, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="~/" title="Это вы"> <%: Context.User.Identity.GetUserName()  %></a></li>
                                 <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Выход" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
