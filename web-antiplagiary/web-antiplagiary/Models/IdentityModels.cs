@@ -13,7 +13,9 @@ namespace web_antiplagiary.Models
     // Можно добавить данные о пользователе, указав больше свойств для класса User. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=317594.
     public class ApplicationUser : IdentityUser
     {        
-       public DateTime DateCreate { get; set; }
+        
+       public DateTime? DateCreate { get; set; }
+        
         public string SecurityInfo { get; set; }
 
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)

@@ -166,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Account\AddNewUser.aspx" />
     <Content Include="Account\AddWorks.aspx" />
     <Content Include="Account\AdmPanel.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -223,6 +224,13 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\AddNewUser.aspx.cs">
+      <DependentUpon>AddNewUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddNewUser.aspx.designer.cs">
+      <DependentUpon>AddNewUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\AddWorks.aspx.cs">
       <DependentUpon>AddWorks.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -302,6 +310,10 @@
     <Compile Include="Migrations\202101140734241_1.Designer.cs">
       <DependentUpon>202101140734241_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101180855421_2.cs" />
+    <Compile Include="Migrations\202101180855421_2.Designer.cs">
+      <DependentUpon>202101180855421_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ModelAntiPL.cs" />
@@ -351,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101140734241_1.resx">
       <DependentUpon>202101140734241_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101180855421_2.resx">
+      <DependentUpon>202101180855421_2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

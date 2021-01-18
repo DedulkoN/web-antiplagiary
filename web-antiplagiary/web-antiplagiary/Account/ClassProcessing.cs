@@ -244,7 +244,63 @@ namespace web_antiplagiary.Account
 
         }
 
+        /// <summary>
+        /// генерация случайной численно-буквенной последовательности
+        /// </summary>
+        /// <param name="countSunmol">количество символов</param>
+        /// <returns>Строка символов</returns>
+        public static string PasswordGenerator(int countSunmol=6)
+        {
+            StringBuilder RezultString = new StringBuilder();
+            Random random = new Random();
+            for (int i = 0; i < countSunmol; i++)
+            {
+                if (random.NextDouble() > 0.5)
+                {
+                    RezultString.Append( Convert.ToChar(random.Next(97, 122)) );
+                }
+                else
+                {
+                    RezultString.Append( random.Next(0, 9).ToString());
+                }
+            }
+           return RezultString.ToString();
+        }   
 
+
+        public static string UserNameGenerator()
+        {
+            ApplicationDbContext applicationDbContext = new ApplicationDbContext();
+
+            string newName="";
+            var roleId = applicationDbContext.Roles.Where(ex => ex.Name == "Student").First();
+            var users = applicationDbContext.Users.Where(ex => ex.Roles == roleId).OrderByDescending(ex=>ex.UserName);
+            foreach(ApplicationUser user in users)
+            {
+                try
+                {
+                   string[] worlds = user.UserName.Split('_');
+                    int lastNumber = 0;
+                    lastNumber = Convert.ToInt32(worlds[1]);
+                    newName = $"User_{lastNumber}";
+                    if (applicationDbContext.Users.Where(e=>e.UserName== newName).Count()==0)
+                    {
+                        break;
+                    } 
+                    else
+                    {
+                        newName = "";
+                        continue;
+                    }
+
+                }
+                catch { continue; }
+            }
+
+            if (newName == "") newName = "User_0";
+
+            return newName;
+        }
 
     }
 }

@@ -17,6 +17,7 @@ namespace web_antiplagiary.Account
         public StringBuilder TableText;
         protected void Page_Load(object sender, EventArgs e)
         {
+
             TableText = new StringBuilder();
            
             if( Context.User.IsInRole("Odmin") )
@@ -29,6 +30,17 @@ namespace web_antiplagiary.Account
                         role += applicationDbContext.Roles.Where(ex => ex.Id == a.RoleId).FirstOrDefault().Name;
                             TableText.Append($"<tr><td>{user.UserName}</td><td>{user.SecurityInfo}</td><td>{role}</td><td>{user.LockoutEnabled}</td></tr>");
                 }
+            }
+            else
+            {
+                ApplicationDbContext applicationDbContext = new ApplicationDbContext();
+                string roleId = applicationDbContext.Roles.Where(ex => ex.Name == "Student").First().Id;
+                foreach (ApplicationUser user in applicationDbContext.Users)
+                   if(user.Roles.Where(ex=>ex.RoleId==roleId).Count()>0)
+                    {
+                        TableText.Append($"<tr><td>{user.UserName}</td><td>{user.SecurityInfo}</td><td>Student</td><td>{user.LockoutEnabled}</td></tr>");
+                    }
+                    
             }
             
         }

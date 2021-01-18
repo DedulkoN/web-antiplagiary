@@ -122,3 +122,4 @@ D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\System.IO.Packagin
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web_antiplagiary.Migrations.InitialCreate.resources
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web-antiplagiary.csproj.GenerateResource.cache
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web_antiplagiary.Migrations._1.resources
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web_antiplagiary.Migrations._2.resources
