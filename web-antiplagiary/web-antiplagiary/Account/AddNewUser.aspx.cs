@@ -38,18 +38,21 @@ namespace web_antiplagiary.Account
         {
             try
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();                
                 var user = new ApplicationUser() { UserName = TextBoxName.Text };
                 IdentityResult result = manager.Create(user, TextBoxPass.Text);
-
+                ApplicationDbContext applicationDbContext = new ApplicationDbContext();
                 if (result.Succeeded)
                 {
-                    manager.AddToRoles(user.Id, DropDownListRole.SelectedItem.Text);
-                    user.DateCreate = DateTime.Now;
-                    user.SecurityInfo = TextBoxPass.Text;
+                    manager.AddToRoles(user.Id, DropDownListRole.SelectedItem.Text);                    
+                    var u = applicationDbContext.Users.Where(x => x.Id == user.Id).First();
+                    u.DateCreate = DateTime.Now;
+                    u.SecurityInfo = TextBoxPass.Text;
+                    applicationDbContext.SaveChanges();
                     LabelInfo.Text = $"Пользователь с логином {user.UserName}, паролем {user.SecurityInfo} и ролью {DropDownListRole.SelectedItem.Text} успешно создан и готов к работе.";
                     TextBoxName.Text = "";
                     TextBoxPass.Text = "";
+                    
                 }
             }
             catch(Exception ex)
@@ -57,6 +60,16 @@ namespace web_antiplagiary.Account
                 LabelInfo.Text = ex.Message; 
             }
 
+        }
+
+        protected void ButtonPassGenerate_Click(object sender, EventArgs e)
+        {
+            TextBoxPass.Text = ClassProcessing.PasswordGenerator();
+        }
+
+        protected void ButtonNameGenerate_Click(object sender, EventArgs e)
+        {
+            TextBoxName.Text = ClassProcessing.UserNameGenerator();
         }
     }
 }

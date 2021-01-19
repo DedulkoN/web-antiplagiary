@@ -8,6 +8,7 @@ using System.Text;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Xml;
 using web_antiplagiary.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 
 
@@ -268,21 +269,27 @@ namespace web_antiplagiary.Account
         }   
 
 
+        /// <summary>
+        /// генерация имен пользователей формата User_[порядковый_номер]
+        /// </summary>
+        /// <returns>новое имя пользователя</returns>
         public static string UserNameGenerator()
         {
             ApplicationDbContext applicationDbContext = new ApplicationDbContext();
 
             string newName="";
             var roleId = applicationDbContext.Roles.Where(ex => ex.Name == "Student").First();
-            var users = applicationDbContext.Users.Where(ex => ex.Roles == roleId).OrderByDescending(ex=>ex.UserName);
-            foreach(ApplicationUser user in users)
+
+            var users = roleId.Users; /*applicationDbContext.Users.Where(ex => ex.Roles == roleId);.Select(ex=>ex.UserName).ToList();*/
+            foreach(var user in users)
             {
                 try
                 {
-                   string[] worlds = user.UserName.Split('_');
+                    // string[] worlds = user.UserName.Split('_');
+                    string[] worlds = applicationDbContext.Users.Where(ex => ex.Id == user.UserId).First().UserName.Split('_');
                     int lastNumber = 0;
                     lastNumber = Convert.ToInt32(worlds[1]);
-                    newName = $"User_{lastNumber}";
+                    newName = $"User_{lastNumber+1}";
                     if (applicationDbContext.Users.Where(e=>e.UserName== newName).Count()==0)
                     {
                         break;

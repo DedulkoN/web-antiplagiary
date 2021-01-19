@@ -9,7 +9,7 @@
                <asp:RoleGroup Roles="Odmin">
                         <ContentTemplate>
                            <div class="col-md-4">
-                                   <asp:Button ID="ButtonAddNew" runat="server" Text="Добавить пользователя" Height="100%" Width="100%" />
+                                   <asp:Button ID="ButtonAddNew" runat="server" Text="Добавить пользователя" Height="100%" Width="100%" PostBackUrl="~/Account/AddNewUser.aspx" />
                                </div>
                                <div class="col-md-4">
                                    <asp:Button ID="ButtonBlock" runat="server" Text="Управление блокировкой"  Height="100%" Width="100%"/>
