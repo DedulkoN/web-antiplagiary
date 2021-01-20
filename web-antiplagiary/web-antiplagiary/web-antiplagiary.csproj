@@ -169,6 +169,7 @@
     <Content Include="Account\AddNewUser.aspx" />
     <Content Include="Account\AddWorks.aspx" />
     <Content Include="Account\AdmPanel.aspx" />
+    <Content Include="Account\blockManager.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -244,6 +245,13 @@
     </Compile>
     <Compile Include="Account\AdmPanel.aspx.designer.cs">
       <DependentUpon>AdmPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\blockManager.aspx.cs">
+      <DependentUpon>blockManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\blockManager.aspx.designer.cs">
+      <DependentUpon>blockManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\ClassProcessing.cs" />
     <Compile Include="Account\Confirm.aspx.cs">

@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using web_antiplagiary.Models;
+using System.Linq;
 
 namespace web_antiplagiary.Account
 {
@@ -35,6 +36,9 @@ namespace web_antiplagiary.Account
                 // Чтобы ошибки при вводе пароля инициировали блокирование, замените на shouldLockout: true
                 var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
 
+                ApplicationDbContext applicationDbContext = new ApplicationDbContext();              
+               
+               
                 switch (result)
                 {
                     case SignInStatus.Success:

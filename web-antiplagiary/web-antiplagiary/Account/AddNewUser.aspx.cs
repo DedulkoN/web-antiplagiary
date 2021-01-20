@@ -48,6 +48,7 @@ namespace web_antiplagiary.Account
                     var u = applicationDbContext.Users.Where(x => x.Id == user.Id).First();
                     u.DateCreate = DateTime.Now;
                     u.SecurityInfo = TextBoxPass.Text;
+                    u.LockoutEnabled = false;
                     applicationDbContext.SaveChanges();
                     LabelInfo.Text = $"Пользователь с логином {user.UserName}, паролем {user.SecurityInfo} и ролью {DropDownListRole.SelectedItem.Text} успешно создан и готов к работе.";
                     TextBoxName.Text = "";

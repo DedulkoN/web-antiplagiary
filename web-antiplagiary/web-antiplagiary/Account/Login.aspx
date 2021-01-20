@@ -19,9 +19,9 @@
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Адрес электронной почты</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
+                            <asp:TextBox runat="server" ID="Email" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                                CssClass="text-danger" ErrorMessage="Поле адреса электронной почты заполнять обязательно." />
+                               CssClass="text-danger" ErrorMessage="Поле адреса электронной почты заполнять обязательно." /> 
                         </div>
                     </div>
                     <div class="form-group">
