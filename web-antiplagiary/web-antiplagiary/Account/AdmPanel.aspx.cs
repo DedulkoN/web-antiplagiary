@@ -28,7 +28,8 @@ namespace web_antiplagiary.Account
                     string role="";
                     foreach (var a in user.Roles)
                         role += applicationDbContext.Roles.Where(ex => ex.Id == a.RoleId).FirstOrDefault().Name;
-                            TableText.Append($"<tr><td>{user.UserName}</td><td>{user.SecurityInfo}</td><td>{role}</td><td>{!user.LockoutEnabled}</td></tr>");
+                    var block = user.LockoutEnabled ? "Заблокирован" : "Нет";
+                    TableText.Append($"<tr scope='row'><td>{user.UserName}</td><td>{user.SecurityInfo}</td><td>{role}</td><td>{block}</td></tr>");
                 }
             }
             else
@@ -38,7 +39,9 @@ namespace web_antiplagiary.Account
                 foreach (ApplicationUser user in applicationDbContext.Users.OrderBy(x=>x.DateCreate))
                    if(user.Roles.Where(ex=>ex.RoleId==roleId).Count()>0)
                     {
-                        TableText.Append($"<tr><td>{user.UserName}</td><td>{user.SecurityInfo}</td><td>Student</td><td>{!user.LockoutEnabled}</td></tr>");
+                       
+                        var block = user.LockoutEnabled ?  "Заблокирован" : "Нет";
+                        TableText.Append($"<tr><td>{user.UserName}</td><td>{user.SecurityInfo}</td><td>Student</td><td>{block}</td></tr>");
                     }
                     
             }

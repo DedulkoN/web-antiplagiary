@@ -9,6 +9,8 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Xml;
 using System.Text;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace web_antiplagiary.Account
 {
@@ -18,7 +20,9 @@ namespace web_antiplagiary.Account
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var manager= Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            if (manager.GetLockoutEnabled(User.Identity.GetUserId()))
+                Response.Redirect("/Account/Lockout");
         }
 
         protected void ButtonStart_Click(object sender, EventArgs e)

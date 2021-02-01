@@ -11,6 +11,7 @@ namespace web_antiplagiary.Account
 {
     public partial class Login : Page
     {
+        int DayEnambled=3;
         protected void Page_Load(object sender, EventArgs e)
         {
            // RegisterHyperLink.NavigateUrl = "Register";
@@ -28,15 +29,32 @@ namespace web_antiplagiary.Account
         {
             if (IsValid)
             {
-                // Проверка пароля пользователя
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
 
+                // Проверка пароля пользователя
+                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();             
+                               
+                try
+                {
+                    ApplicationDbContext applicationDbContext = new ApplicationDbContext();
+                    var u= manager.Users.Where(ex => ex.UserName == Email.Text).First();
+                     if (manager.IsInRole(u.Id, "Student"))
+                    {
+                        if( u.DateCreate.Value.AddDays(DayEnambled) < DateTime.Now)
+                        {
+                            
+                            manager.SetLockoutEnabled(u.Id, true);
+                            manager.SetLockoutEndDate(u.Id, DateTime.Now.AddYears(20)); 
+                        }
+                    }
+                }
+                catch { }
+               
+                var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
                 // Сбои при входе не приводят к блокированию учетной записи
                 // Чтобы ошибки при вводе пароля инициировали блокирование, замените на shouldLockout: true
                 var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
 
-                ApplicationDbContext applicationDbContext = new ApplicationDbContext();              
+           
                
                
                 switch (result)

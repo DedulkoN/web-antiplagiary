@@ -38,11 +38,11 @@
             </Scripts>
         </asp:ScriptManager>
          
-         
+         <header>
 
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">   
+           
             <div class="container">
-
                 <div class ="row" style="margin-top:3px;">
                   <a runat="server" href="~/Default.aspx">  <img runat="server" src="~/image/v_11.png" /></a>
                 </div>
@@ -55,13 +55,45 @@
                         <span class="icon-bar"></span>
                     </button>                  
                 </div>
-
-                <div class="navbar-collapse collapse" >
+            </div>
+                <div class="navbar-collapse collapse" style="background-color:#1e6eb3" >
+                    <div class="container">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Account/ValidateText">Проверка текста</a></li>
-                        <li><a runat="server" href="~/Account/AddWorks">Добавить работы</a></li>                       
-                    </ul>
+                         <asp:LoginView runat="server" ViewStateMode="Disabled">
+                               <LoggedInTemplate>
+                                   <li><a runat="server" href="~/Account/ValidateText">Проверка текста</a></li>
+                                </LoggedInTemplate>
 
+                                <RoleGroups>
+                                    <asp:RoleGroup Roles="Kafedra">
+                                        <ContentTemplate>
+                                          <li><a runat="server" href="~/Account/ValidateText">Проверка текста</a></li>
+                                          <li><a runat="server" href="~/Account/AddWorks">Добавить работы</a></li>                                                
+                                        </ContentTemplate>
+                                    </asp:RoleGroup>
+
+                                <asp:RoleGroup Roles="Odmin">
+                                        <ContentTemplate>  
+                                          <li><a runat="server" href="~/Account/ValidateText">Проверка текста</a></li>
+                                          <li><a runat="server" href="~/Account/AddWorks">Добавить работы</a></li>       
+                                          <li><a runat="server" href="~/Account/AdmPanel">Управление пользователями</a></li>  
+                                        </ContentTemplate>
+                                    </asp:RoleGroup>
+                                    <asp:RoleGroup Roles="Moderator">
+                                        <ContentTemplate>    
+                                          <li><a runat="server" href="~/Account/ValidateText">Проверка текста</a></li>                                           
+                                          <li><a runat="server" href="~/Account/AdmPanel">Управление пользователями</a></li>                           
+                                        </ContentTemplate>
+                                    </asp:RoleGroup>
+                           </RoleGroups>
+                        </asp:LoginView>
+
+
+
+
+                        
+                    </ul>
+                    
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">                               
@@ -70,23 +102,26 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/" title="Это вы"> <%: Context.User.Identity.GetUserName()  %></a></li>
+                                <li><a runat="server" href="~/Account/Login" title="Это вы"> <%: Context.User.Identity.GetUserName()  %></a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Выход" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
-
+                    </div>
                 </div>
-            </div>
+
+           
         </div>
+        </header>
         <div class="container body-content">
 
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             
         </div>
+       
         <footer class="panel-footer" >
             <div class="container">
                 <table ">
@@ -101,9 +136,23 @@
 	                </tr>
 	             </table>
 
-                <p style="color:#FFF">&copy; <%: DateTime.Now.Year %> - Антиплагиат БарГУ</p>
+                <p style="color:#FFF">&copy; <%: DateTime.Now.Year %> - Проверка работ студентов на заимствования</p>
                 </div>
             </footer>
+
     </form>
 </body>
+     <script type="text/javascript">
+                        $(function () {                             // когда страница загружена
+                        $('a').each(function () {      // проходим по нужным нам ссылками
+                            var location = window.location.href // переменная с адресом страницы
+                            var link = this.href                // переменная с url ссылки
+                            var result = location.match(link);  // результат возвращает объект если совпадение найдено и null при обратном
+                           
+                            if(result != null) {                // если НЕ равно null
+                                $(this).addClass('current');    // добавляем класс
+                            }
+                        });
+                    });
+     </script>
 </html>

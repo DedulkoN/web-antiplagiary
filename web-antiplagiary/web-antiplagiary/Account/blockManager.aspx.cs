@@ -36,6 +36,7 @@ namespace web_antiplagiary.Account
                         }
                     
                 }
+                DropDownListStudent_SelectedIndexChanged(sender, e);
             }
         }
 
@@ -63,7 +64,7 @@ namespace web_antiplagiary.Account
         {
             ApplicationDbContext applicationDbContext = new ApplicationDbContext();
             var user = applicationDbContext.Users.Where(ex => ex.Id == DropDownListStudent.SelectedValue).First();
-            if(user.LockoutEnabled)
+            if(!user.LockoutEnabled)
             {
                 ButtonBlock.Enabled = true;
                 ButtonUnBlock.Enabled = false;
