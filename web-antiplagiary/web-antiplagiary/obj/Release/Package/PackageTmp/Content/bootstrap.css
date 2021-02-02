@@ -1611,7 +1611,7 @@ pre code {
 .row {
   margin-right: -15px;
   margin-left: -15px;
-  margin-bottom:3px;
+  margin-bottom:5px;
 }
 .row-no-gutters {
   margin-right: 0;
@@ -5564,11 +5564,14 @@ button.list-group-item-danger.active:focus {
   color: inherit;
 }
 .panel-footer {
+    margin-top:15px;
     padding: 10px 15px;
     background-color: #3886ca;
     border-top: 1px solid #ddd;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
+   /* position:center;
+    bottom: 0;*/
 }
 .panel > .list-group,
 .panel > .panel-collapse > .list-group {

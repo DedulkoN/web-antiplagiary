@@ -102,7 +102,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/" title="Это вы"> <%: Context.User.Identity.GetUserName()  %></a></li>
+                                <li><a runat="server" href="~/Account/Login" title="Это вы"> <%: Context.User.Identity.GetUserName()  %></a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Выход" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -121,6 +121,7 @@
             </asp:ContentPlaceHolder>
             
         </div>
+       
         <footer class="panel-footer" >
             <div class="container">
                 <table ">
@@ -135,9 +136,23 @@
 	                </tr>
 	             </table>
 
-                <p style="color:#FFF">&copy; <%: DateTime.Now.Year %> - Антиплагиат БарГУ</p>
+                <p style="color:#FFF">&copy; <%: DateTime.Now.Year %> - Проверка работ студентов на заимствования</p>
                 </div>
             </footer>
+
     </form>
 </body>
+     <script type="text/javascript">
+                        $(function () {                             // когда страница загружена
+                        $('a').each(function () {      // проходим по нужным нам ссылками
+                            var location = window.location.href // переменная с адресом страницы
+                            var link = this.href                // переменная с url ссылки
+                            var result = location.match(link);  // результат возвращает объект если совпадение найдено и null при обратном
+                           
+                            if(result != null) {                // если НЕ равно null
+                                $(this).addClass('current');    // добавляем класс
+                            }
+                        });
+                    });
+     </script>
 </html>

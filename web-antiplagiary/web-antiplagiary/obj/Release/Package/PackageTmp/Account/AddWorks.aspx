@@ -5,7 +5,7 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
 
-
+    <h3 class="text-center">Добавление работ в Базу Данных</h3>
     <div class="container">
         <div class="row">
              <div class="col-md-4 text-right">
@@ -25,7 +25,7 @@
                  Файлы с работами
                  </div>
             <div class="col-md-8 col-12">
-                 <asp:FileUpload ID="FileUpload1" runat="server" AllowMultiple="True" CssClass="form-control" Width="100%"/>
+                 <asp:FileUpload ID="FileUpload1" runat="server" AllowMultiple="True" CssClass="form-control" Width="100%" accept=".docx"/>
                 <asp:RegularExpressionValidator ID="RegUpload" runat="server" ControlToValidate="FileUpload1"
                         ErrorMessage="Тoлько файлы с расширением .docx" CssClass="text-danger" Display="Dynamic"
                         ValidationExpression="(.*\.([Dd][Oo][Cc][Xx])$)"></asp:RegularExpressionValidator>
@@ -39,9 +39,11 @@
                     </div>
             </div>
          <div class="row">
-            <div class ="col-md-12" style ="font:larger ">
+             <div class="col-md-1"></div>
+            <div class ="col-md-10" style ="font-size:larger">
                 <%: new HtmlString( htmlResult.ToString() ) %>
             </div>
+             <div class="col-md-1"></div>
          </div>
 
         </div> 
