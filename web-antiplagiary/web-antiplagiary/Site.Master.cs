@@ -18,6 +18,7 @@ namespace web_antiplagiary
 
         protected void Page_Init(object sender, EventArgs e)
         {
+            
             // Код ниже защищает от XSRF-атак
             var requestCookie = Request.Cookies[AntiXsrfTokenKey];
             Guid requestCookieGuidValue;

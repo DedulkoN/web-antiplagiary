@@ -26,10 +26,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/13/2021 17:14:58</publishTime>
     </File>
     <File Include="Account/Lockout.aspx">
-      <publishTime>01/21/2021 15:42:53</publishTime>
+      <publishTime>02/03/2021 14:51:04</publishTime>
     </File>
     <File Include="Account/Login.aspx">
-      <publishTime>01/20/2021 14:57:09</publishTime>
+      <publishTime>02/03/2021 15:00:58</publishTime>
     </File>
     <File Include="Account/OpenAuthProviders.ascx">
       <publishTime>12/08/2020 09:28:41</publishTime>
@@ -38,7 +38,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/27/2021 14:37:54</publishTime>
     </File>
     <File Include="Account/ValidateText.aspx">
-      <publishTime>02/01/2021 15:51:52</publishTime>
+      <publishTime>02/03/2021 15:33:25</publishTime>
     </File>
     <File Include="Account/Web.config">
       <publishTime>01/21/2021 11:12:52</publishTime>
@@ -320,10 +320,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/11/2014 15:26:04</publishTime>
     </File>
     <File Include="bin/web-antiplagiary.dll">
-      <publishTime>02/02/2021 15:55:17</publishTime>
+      <publishTime>02/04/2021 11:02:52</publishTime>
     </File>
     <File Include="bin/web-antiplagiary.pdb">
-      <publishTime>02/02/2021 15:55:17</publishTime>
+      <publishTime>02/04/2021 11:02:52</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -384,6 +384,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>12/08/2020 09:28:34</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>02/03/2021 10:09:07</publishTime>
     </File>
     <File Include="Scripts/jquery-3.4.1.js">
       <publishTime>12/08/2020 09:28:26</publishTime>
@@ -470,7 +473,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/08/2020 09:28:38</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>02/01/2021 16:16:28</publishTime>
+      <publishTime>02/04/2021 10:54:31</publishTime>
+    </File>
+    <File Include="UserGuide.pdf">
+      <publishTime>02/04/2021 09:49:06</publishTime>
     </File>
     <File Include="ViewSwitcher.ascx">
       <publishTime>12/08/2020 09:28:40</publishTime>

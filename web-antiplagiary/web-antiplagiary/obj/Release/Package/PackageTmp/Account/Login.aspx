@@ -17,11 +17,11 @@
                         </p>
                     </asp:PlaceHolder>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Адрес электронной почты</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Имя пользователя</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Email" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                               CssClass="text-danger" ErrorMessage="Поле адреса электронной почты заполнять обязательно." /> 
+                               CssClass="text-danger" ErrorMessage="Поле имя пользователя заполнять обязательно." /> 
                         </div>
                     </div>
                     <div class="form-group">
@@ -32,8 +32,9 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        
                         <div class="col-md-offset-2 col-md-10">
-                            <div class="checkbox">
+                            <div class="checkbox" style="margin-left:20px">
                                 <asp:CheckBox runat="server" ID="RememberMe" />
                                 <asp:Label runat="server" AssociatedControlID="RememberMe">Запомнить меня</asp:Label>
                             </div>

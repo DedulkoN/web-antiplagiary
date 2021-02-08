@@ -22,7 +22,7 @@ namespace web_antiplagiary.Account
         {
             var manager= Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             if (manager.GetLockoutEnabled(User.Identity.GetUserId()))
-                Response.Redirect("/Account/Lockout");
+                Response.Redirect("~/Account/Lockout");
         }
 
         protected void ButtonStart_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace web_antiplagiary.Account
                         Response.Write("Ошибка: " + ex.Message + Environment.NewLine + ex.StackTrace);
                     }
                    
-                    htmlResult += $"<span>Проверяемый файл: </span> <span>{file.FileName}</span><br/><span>Результат: </span><span style='color:red'>{proc:00.##}%</span>";
+                    htmlResult += $"<span style='font-size:larger'>Проверяемый файл: </span> <span style='font-size:larger'>{file.FileName}</span><br/><span style='font-size:larger'>Результат: </span><span style='color:red;font-size:larger'>{proc:00.##}%</span>";
                     
                    
                 }

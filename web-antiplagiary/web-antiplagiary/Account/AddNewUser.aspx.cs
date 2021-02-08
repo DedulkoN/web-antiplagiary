@@ -50,10 +50,15 @@ namespace web_antiplagiary.Account
                     u.SecurityInfo = TextBoxPass.Text;
                     u.LockoutEnabled = false;
                     applicationDbContext.SaveChanges();
-                    LabelInfo.Text = $"Пользователь с логином {user.UserName}, паролем {user.SecurityInfo} и ролью {DropDownListRole.SelectedItem.Text} успешно создан и готов к работе.";
+                    LabelInfo.Text = $"Пользователь с логином {user.UserName}, паролем {TextBoxPass.Text} и ролью {DropDownListRole.SelectedItem.Text} успешно создан и готов к работе.";
                     TextBoxName.Text = "";
                     TextBoxPass.Text = "";
                     
+                }
+                else {
+                    LabelInfo.Text = "";
+                    foreach (var s in result.Errors)
+                        LabelInfo.Text += $"{s} "; 
                 }
             }
             catch(Exception ex)

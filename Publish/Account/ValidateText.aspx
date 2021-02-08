@@ -39,6 +39,7 @@
              <div class="col-md-3"></div>
             <div class ="col-md-6 col-12 " style ="font:larger ">
                 <%: new HtmlString( htmlResult ) %>
+              
             </div>
              <div class="col-md-3"></div>
          </div>
