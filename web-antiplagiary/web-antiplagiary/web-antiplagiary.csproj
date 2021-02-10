@@ -359,14 +359,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Account\TempFiles\" />
     <Folder Include="App_Data\" />
-    <Folder Include="TempFiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="UserGuide.pdf" />
+    <Content Include="Account\Templates\TemplateValidate.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

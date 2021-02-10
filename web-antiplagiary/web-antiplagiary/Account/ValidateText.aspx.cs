@@ -12,6 +12,10 @@ using System.Text;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 
+using Spire.Doc;
+using System.Net;
+using System.Text.RegularExpressions;
+
 namespace web_antiplagiary.Account
 {
     public partial class ValidateText : System.Web.UI.Page
@@ -59,12 +63,61 @@ namespace web_antiplagiary.Account
                                 case "3":
                                     proc = ClassProcessing.ValidateWorks(words, ClassProcessing.TypeValidateWork.Научная);
                                 break;
-                            }
-                            
+                            }                            
                       
 
                         stream.Close();
                         //File.Delete(SaveLocation);
+                        if (CheckPrint.Checked)
+                        {
+                            string userfolder;
+                            userfolder = Server.MapPath("TempFiles");
+                            string templatePath = Server.MapPath("Templates") + "\\TemplateValidate.docx";
+                            string newPath = userfolder + $"\\Rez_{User.Identity.GetUserId()}.docx";
+                            if (!File.Exists(newPath))
+                            {
+                                File.Copy(templatePath, newPath);
+                            }
+
+                            using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(newPath, true))
+                            {
+                                string docText = null;
+                                using (StreamReader sr = new StreamReader(wordDoc.MainDocumentPart.GetStream()))
+                                {
+                                    docText = sr.ReadToEnd();
+                                }
+
+                                Regex regexFaculty = new Regex("@date");
+                                docText = regexFaculty.Replace(docText, DateTime.Now.ToShortTimeString() + " " + DateTime.Now.ToShortDateString());
+                                Regex regexFIO = new Regex("@file");
+                                docText = regexFIO.Replace(docText, file.FileName);
+
+                                Regex regexTicket = new Regex("@result");
+                                docText = regexTicket.Replace(docText, $"{proc:00.##}%");
+
+                                using (StreamWriter sw = new StreamWriter(wordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                                {
+                                    sw.Write(docText);
+                                }
+                            }
+
+                            string pdfPath = Path.Combine(userfolder, $"Rez_{User.Identity.GetUserId()}.pdf");
+
+                            Spire.Doc.Document document = new Spire.Doc.Document();
+                            document.LoadFromFile(newPath);
+                            document.SaveToFile(pdfPath, FileFormat.PDF);
+                            File.Delete(newPath);
+                            WebClient UserClient = new WebClient();
+                            Byte[] FileBuffer = UserClient.DownloadData(pdfPath);
+                            if (FileBuffer != null)
+                            {
+                                Response.ContentType = "application/pdf";
+                                Response.AddHeader("content-length", FileBuffer.Length.ToString());
+                                Response.BinaryWrite(FileBuffer);
+                            }
+
+
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -73,6 +126,7 @@ namespace web_antiplagiary.Account
                     }
                    
                     htmlResult += $"<span style='font-size:larger'>Проверяемый файл: </span> <span style='font-size:larger'>{file.FileName}</span><br/><span style='font-size:larger'>Результат: </span><span style='color:red;font-size:larger'>{proc:00.##}%</span>";
+                    
                     
                    
                 }
