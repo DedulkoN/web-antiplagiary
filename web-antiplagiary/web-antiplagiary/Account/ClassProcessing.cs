@@ -168,7 +168,10 @@ namespace web_antiplagiary.Account
 
                             if (tempString.Length > 430) tempString = tempString.Substring(0, 430);
                             CountPar++;
-                            if (modelAntiPL.TextWorksScience.Where(m => m.TextWorks == tempString).Count() > 0)
+                            if (modelAntiPL.TextWorksScience.Where(m => m.TextWorks == tempString).Count() > 0 
+                                || modelAntiPL.TextWorksDiploms.Where(m => m.TextWorks == tempString).Count() > 0
+                                || modelAntiPL.TextWorks.Where(m => m.TextWorks1 == tempString).Count() > 0
+                                || modelAntiPL.TextWorksMagisters.Where(m => m.TextWorks == tempString).Count() > 0)
                             {
 
                                 CountInBase++;

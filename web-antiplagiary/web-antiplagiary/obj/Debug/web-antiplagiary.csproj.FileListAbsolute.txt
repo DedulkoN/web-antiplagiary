@@ -110,7 +110,6 @@ D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\ru\Microsoft.Owin.
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\ru\Microsoft.Owin.Security.Google.resources.dll
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web-antiplagiary.csprojAssemblyReference.cache
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web-antiplagiary.csproj.CoreCompileInputs.cache
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web-antiplagiary.csproj.CopyComplete
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web-antiplagiary.dll
@@ -131,3 +130,4 @@ D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Microsoft.mshtml.d
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Spire.Doc.xml
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Spire.License.xml
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Spire.Pdf.xml
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Debug\web-antiplagiary.csprojAssemblyReference.cache

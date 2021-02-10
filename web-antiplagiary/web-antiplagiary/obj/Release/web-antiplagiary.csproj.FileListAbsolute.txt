@@ -123,3 +123,11 @@ D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Release\web-antipl
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Release\web-antiplagiary.csproj.CopyComplete
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Release\web-antiplagiary.dll
 D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\obj\Release\web-antiplagiary.pdb
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Account\Templates\TemplateValidate.docx
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Spire.Doc.dll
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Spire.License.dll
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Spire.Pdf.dll
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Microsoft.mshtml.dll
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Spire.Doc.xml
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Spire.License.xml
+D:\Git\web-antiplagiary\web-antiplagiary\web-antiplagiary\bin\Spire.Pdf.xml

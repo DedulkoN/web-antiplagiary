@@ -30,6 +30,16 @@
                 </div>
         </div>
         <div class="row">
+            <div class="col-md-4 text-right">
+                Печать результата в pdf
+                 </div>
+            <div class="col-md-8 col-12">
+                <asp:CheckBox ID="CheckPrint" runat="server" />
+                </div>
+        </div>
+
+
+        <div class="row">
             <div class="col-md-4 "></div>
                 <div class="col-md-4 ">
                 <asp:Button ID="ButtonStart" CssClass="btn btn-primary" runat="server" Text="Проверить работу" OnClick="ButtonStart_Click"/>

@@ -11,7 +11,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/08/2020 09:28:04</publishTime>
     </File>
     <File Include="Account/AddNewUser.aspx">
-      <publishTime>01/27/2021 14:36:57</publishTime>
+      <publishTime>02/10/2021 16:13:52</publishTime>
     </File>
     <File Include="Account/AddWorks.aspx">
       <publishTime>02/01/2021 15:50:10</publishTime>
@@ -37,11 +37,17 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Account/RolesManager.aspx">
       <publishTime>01/27/2021 14:37:54</publishTime>
     </File>
+    <File Include="Account/Templates/TemplateValidate.docx">
+      <publishTime>02/10/2021 15:14:01</publishTime>
+    </File>
     <File Include="Account/ValidateText.aspx">
-      <publishTime>02/03/2021 15:33:25</publishTime>
+      <publishTime>02/10/2021 12:11:39</publishTime>
     </File>
     <File Include="Account/Web.config">
       <publishTime>01/21/2021 11:12:52</publishTime>
+    </File>
+    <File Include="bin/Account/Templates/TemplateValidate.docx">
+      <publishTime>02/10/2021 15:14:01</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
@@ -81,6 +87,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>09/05/2018 16:10:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.mshtml.dll">
+      <publishTime>06/16/2020 10:49:39</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
       <publishTime>01/18/2019 20:50:30</publishTime>
@@ -313,6 +322,15 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/ru/System.Web.Optimization.resources.dll">
       <publishTime>02/11/2014 15:28:42</publishTime>
     </File>
+    <File Include="bin/Spire.Doc.dll">
+      <publishTime>11/04/2019 07:04:54</publishTime>
+    </File>
+    <File Include="bin/Spire.License.dll">
+      <publishTime>11/04/2019 02:57:58</publishTime>
+    </File>
+    <File Include="bin/Spire.Pdf.dll">
+      <publishTime>11/04/2019 07:06:00</publishTime>
+    </File>
     <File Include="bin/System.IO.Packaging.dll">
       <publishTime>11/15/2019 08:56:30</publishTime>
     </File>
@@ -320,10 +338,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/11/2014 15:26:04</publishTime>
     </File>
     <File Include="bin/web-antiplagiary.dll">
-      <publishTime>02/09/2021 12:06:48</publishTime>
+      <publishTime>02/10/2021 16:33:01</publishTime>
     </File>
     <File Include="bin/web-antiplagiary.pdb">
-      <publishTime>02/09/2021 12:06:48</publishTime>
+      <publishTime>02/10/2021 16:33:01</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -482,7 +500,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/08/2020 09:28:40</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/28/2021 10:39:43</publishTime>
+      <publishTime>02/10/2021 16:26:36</publishTime>
     </File>
   </ItemGroup>
 </Project>

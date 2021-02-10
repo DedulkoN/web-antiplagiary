@@ -42,6 +42,6 @@
                  <asp:Button ID="ButtonReg" runat="server" CssClass="btn btn-primary"  Text="Создать пользователя" OnClick="ButtonReg_Click" Width="100%" />
             </div>            
         </div>
-
+        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" Visible="false"/>
     </div>
 </asp:Content>

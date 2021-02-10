@@ -11,10 +11,9 @@ using System.Xml;
 using System.Text;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-
 using Spire.Doc;
-using System.Net;
 using System.Text.RegularExpressions;
+using System.Net;
 
 namespace web_antiplagiary.Account
 {
@@ -87,12 +86,12 @@ namespace web_antiplagiary.Account
                                     docText = sr.ReadToEnd();
                                 }
 
-                                Regex regexFaculty = new Regex("@date");
+                                Regex regexFaculty = new Regex("date");
                                 docText = regexFaculty.Replace(docText, DateTime.Now.ToShortTimeString() + " " + DateTime.Now.ToShortDateString());
-                                Regex regexFIO = new Regex("@file");
+                                Regex regexFIO = new Regex("file");
                                 docText = regexFIO.Replace(docText, file.FileName);
 
-                                Regex regexTicket = new Regex("@result");
+                                Regex regexTicket = new Regex("result");
                                 docText = regexTicket.Replace(docText, $"{proc:00.##}%");
 
                                 using (StreamWriter sw = new StreamWriter(wordDoc.MainDocumentPart.GetStream(FileMode.Create)))
@@ -102,12 +101,13 @@ namespace web_antiplagiary.Account
                             }
 
                             string pdfPath = Path.Combine(userfolder, $"Rez_{User.Identity.GetUserId()}.pdf");
-
                             Spire.Doc.Document document = new Spire.Doc.Document();
                             document.LoadFromFile(newPath);
                             document.SaveToFile(pdfPath, FileFormat.PDF);
-                            File.Delete(newPath);
+
+                            //File.Delete(newPath);
                             WebClient UserClient = new WebClient();
+                           
                             Byte[] FileBuffer = UserClient.DownloadData(pdfPath);
                             if (FileBuffer != null)
                             {
@@ -115,8 +115,7 @@ namespace web_antiplagiary.Account
                                 Response.AddHeader("content-length", FileBuffer.Length.ToString());
                                 Response.BinaryWrite(FileBuffer);
                             }
-
-
+                            
                         }
                     }
                     catch (Exception ex)
