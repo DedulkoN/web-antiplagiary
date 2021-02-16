@@ -283,7 +283,7 @@ namespace web_antiplagiary.Account
             string newName="";
             var roleId = applicationDbContext.Roles.Where(ex => ex.Name == "Student").First();
 
-            var users = roleId.Users; /*applicationDbContext.Users.Where(ex => ex.Roles == roleId);.Select(ex=>ex.UserName).ToList();*/
+            var users = roleId.Users ; /*applicationDbContext.Users.Where(ex => ex.Roles == roleId);.Select(ex=>ex.UserName).ToList();*/
             foreach(var user in users)
             {
                 try

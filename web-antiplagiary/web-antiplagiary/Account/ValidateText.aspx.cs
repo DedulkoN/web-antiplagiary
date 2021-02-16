@@ -67,8 +67,7 @@ namespace web_antiplagiary.Account
 
                         stream.Close();
                         //File.Delete(SaveLocation);
-                        if (CheckPrint.Checked)
-                        {
+                       
                             string userfolder;
                             userfolder = Server.MapPath("TempFiles");
                             string templatePath = Server.MapPath("Templates") + "\\TemplateValidate.docx";
@@ -105,8 +104,8 @@ namespace web_antiplagiary.Account
                             document.LoadFromFile(newPath);
                             document.SaveToFile(pdfPath, FileFormat.PDF);
 
-                            //File.Delete(newPath);
-                            WebClient UserClient = new WebClient();
+                            File.Delete(newPath);
+                            /*WebClient UserClient = new WebClient();
                            
                             Byte[] FileBuffer = UserClient.DownloadData(pdfPath);
                             if (FileBuffer != null)
@@ -114,9 +113,9 @@ namespace web_antiplagiary.Account
                                 Response.ContentType = "application/pdf";
                                 Response.AddHeader("content-length", FileBuffer.Length.ToString());
                                 Response.BinaryWrite(FileBuffer);
-                            }
+                            }*/
                             
-                        }
+                        
                     }
                     catch (Exception ex)
                     {
@@ -124,7 +123,8 @@ namespace web_antiplagiary.Account
                         Response.Write("Ошибка: " + ex.Message + Environment.NewLine + ex.StackTrace);
                     }
                    
-                    htmlResult += $"<span style='font-size:larger'>Проверяемый файл: </span> <span style='font-size:larger'>{file.FileName}</span><br/><span style='font-size:larger'>Результат: </span><span style='color:red;font-size:larger'>{proc:00.##}%</span>";
+                    htmlResult += $"<span style='font-size:larger'>Проверяемый файл: </span> <span style='font-size:larger'>{file.FileName}</span><br/><span style='font-size:larger'>Результат: </span><span style='color:red;font-size:larger'>{proc:00.##}%</span>" +
+                        $" <br /> <span style='font-size:larger'> <a runat='server' target='_blank' href='pdfWrite'>Открыть печатную форму результатов проверки</a> </span>";
                     
                     
                    

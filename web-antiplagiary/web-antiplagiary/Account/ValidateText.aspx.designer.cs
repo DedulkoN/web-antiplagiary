@@ -42,15 +42,6 @@ namespace web_antiplagiary.Account
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegUpload;
 
         /// <summary>
-        /// CheckPrint элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckPrint;
-
-        /// <summary>
         /// ButtonStart элемент управления.
         /// </summary>
         /// <remarks>

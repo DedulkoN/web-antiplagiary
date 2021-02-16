@@ -13,7 +13,7 @@
                  <asp:DropDownList ID="DropDownListTypeWork" CssClass="form-control" runat="server" Width="100%">
                     <asp:ListItem Value="0" Text="Курсовая работа/курсовой проект" Selected="True"> </asp:ListItem>
                      <asp:ListItem Value ="1" Text="Дипломная работа/проект"></asp:ListItem>
-                     <asp:ListItem Value ="2" Text="Магистерские рефераты/работы"></asp:ListItem>
+                     <asp:ListItem Value ="2" Text="Магистерские диссертации"></asp:ListItem>
                      <asp:ListItem Value ="3" Text="Научные работы"></asp:ListItem>
                  </asp:DropDownList>
                  </div>
@@ -29,14 +29,14 @@
                         ValidationExpression="(.*\.([Dd][Oo][Cc][Xx])$)"></asp:RegularExpressionValidator>
                 </div>
         </div>
-        <div class="row">
+        <%--<div class="row">
             <div class="col-md-4 text-right">
                 Печать результата в pdf
                  </div>
             <div class="col-md-8 col-12">
                 <asp:CheckBox ID="CheckPrint" runat="server" />
                 </div>
-        </div>
+        </div>--%>
 
 
         <div class="row">
