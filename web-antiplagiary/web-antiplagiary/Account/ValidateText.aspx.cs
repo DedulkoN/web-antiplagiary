@@ -13,7 +13,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Spire.Doc;
 using System.Text.RegularExpressions;
-using System.Net;
+//using System.Net;
 
 namespace web_antiplagiary.Account
 {
